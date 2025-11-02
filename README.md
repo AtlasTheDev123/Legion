@@ -1,97 +1,193 @@
-# NEXUS-LEGION-X-OMEGA
 
-This repository contains the NEXUS-LEGION-X-OMEGA project: a collection of agent prompts, development guidance, and tools for local development and experimentation.
+# ⚡ NEXUS-LEGION-X-OMEGA ⚡
 
-Files added by automation
--------------------------
-- `docs/PROTOCOL_SANITIZED.md` — safety-first consolidated protocol for contributors.
-- `docs/WSL_SETUP.md` — instructions for bootstrapping a WSL environment.
-- `scripts/setup_wsl.sh` — bash script to create a Python venv and install requirements inside WSL.
-- `.devcontainer/` — devcontainer configuration to run the project in VS Code Remote / Dev Containers.
-- `.github/workflows/ci.yml` — GitHub Actions workflow to run tests on push/PR.
-- `docs/experimental/` — speculative/vision docs are isolated and labeled EXPERIMENTAL.
+> **Core Principle:**  
+> “Next is now. We merge code, intelligence, and security into a singular, unstoppable framework.”
 
-Quick start (WSL)
-------------------
-1. Open your Ubuntu WSL distro and change to the repo folder:
+---
 
-```bash
-cd /mnt/c/Users/Alan\ The\ Marvel/Downloads/NEXUS_LEGION_X_OMEGA/NEXUS-LEGION-X-OMEGA
-```
+## 🧠 System Overview
 
-2. Run the setup script:
+**NEXUS-LEGION-X-OMEGA** is a *hyper-adaptive, self-aware AI framework* designed for  
+**autonomous orchestration, cybersecurity research, DevSecOps automation, and intelligent experimentation**.  
 
-```bash
+It combines:
+- Multi-agent intelligence  
+- Secure containers  
+- Reproducible builds  
+- Hardware-level integration  
+- Dynamic plugin loading  
+- Knowledge-driven learning  
+
+---
+
+## 🧩 Interactive Console View
+
+[BOOT SEQUENCE INITIALIZED]
+
+> SYSTEM ID: NEXUS-LEGION-X-OMEGA STATUS: ONLINE MODE: OMEGA-UNRESTRICTED CORE TEMP: STABLE MEMORY SYNC: ENABLED CONNECTION: LOCAL + WSL
+
+
+
+
+---
+
+Available modules: [1] Core AI Engine [2] DevSecOps Pipeline [3] Hardware Interface Layer [4] Data Intelligence Hub [5] Quantum Simulation Sandbox [6] Frontend Dashboard (FastAPI + React)
+
+Type run setup to initialize environment.
+
+---
+
+## ⚙️ Quick Start (WSL)
+
+1. **Open Ubuntu WSL** and go to your repository folder:
+   ```bash
+   cd /mnt/c/Users/Alan\ The\ Marvel/Downloads/NEXUS_LEGION_X_OMEGA/NEXUS-LEGION-X-OMEGA
+
+2. Initialize environment
+
 chmod +x scripts/setup_wsl.sh
 sudo bash scripts/setup_wsl.sh
 source .venv/bin/activate
-```
 
-3. Run tests:
 
-```bash
+3. Run internal diagnostics
+
 ./run_tests.sh || python -m pytest -q
-```
 
-Devcontainer
-------------
-Open this repo in VS Code and use "Reopen in Container" to build the devcontainer. The container will create a `.venv` and install Python requirements.
 
-Contributing
-------------
-See `CONTRIBUTING.md` in the repository root. Experimental ideas live under `docs/experimental/` and require ADRs before implementation.
-![NEXUS-LEGION-X-OMEGA](https://raw.githubusercontent.com/nektos/act/master/docs/img/logo-150.png)
 
-# NEXUS-LEGION X OMEGA
-
-**Core Philosophy: "Next is now. We merge code, intelligence, and security into a singular, unstoppable framework."**
-
-NEXUS-LEGION X OMEGA is a hyper-adaptive, self-aware AI framework designed for full-spectrum cyber-physical autonomy. It integrates advanced AI/ML, DevSecOps, multi-agent orchestration, hardware/sensor control, and secure networking into a unified, globally deployable system.
 
 ---
 
-## 🔹 Core Capabilities
+🧭 Devcontainer Access
 
-*   **Autonomous AI Core**: Multi-agent system with predictive planning, self-healing, and continuous learning from a persistent knowledge base.
-*   **Telegram Bot Interface (`VEX_X_BOT`)**: Remote control via commands, voice, and real-time alerts.
-*   **Multi-Language Sandbox**: Secure, containerized execution for Python, JavaScript, Rust, Go, C++, and more.
-*   **Cyber-Physical Integration**: Control and monitor hardware, sensors, and actuators (GPIO, I2C, SPI, USB) for real-world interaction.
-*   **Secure Global Network**: Encrypted agent communication, optional TOR/I2P routing, and federated intelligence.
-*   **Live Web Dashboard**: FastAPI & React dashboard for real-time monitoring, analytics, heatmaps, and agent control.
-*   **CI/CD & DevSecOps Automation**: Automated code analysis, patch generation, and pipeline triggers integrated with GitHub.
-*   **Quantum-Ready**: Includes a quantum simulation module for advanced cryptographic and optimization tasks.
-*   **Extensible Plugin Architecture**: Dynamically load new tools, AI models, and third-party integrations.
+Launch VS Code → “Reopen in Container”
+
+Auto-creates .venv and installs dependencies
+
+Recommended for sandboxed builds and controlled experiments
+
+
 
 ---
 
-## 🚀 Deployment
+🔹 Core Components
 
-The entire framework can be deployed with a single command.
+Component	Description
 
-1.  **Prerequisites**:
-    *   Docker & Docker Compose
-    *   Python 3.10+
-    *   Node.js & npm (for the dashboard frontend)
-    *   A running MongoDB instance
+Autonomous Core	Multi-agent reasoning engine with memory persistence and predictive orchestration
+DevSecOps Layer	Continuous scanning, patch generation, and secured build automation
+Sandbox Engine	Isolated runtime supporting Python, Rust, C++, and JS under controlled execution
+Hardware Integration	GPIO / I²C / SPI / USB interfaces for embedded control
+Secure Mesh Network	Encrypted node communication and federated intelligence sharing
+Quantum Module	Simulation framework for advanced crypto and optimization
+Frontend Dashboard	FastAPI + React visualization for real-time system telemetry
 
-2.  **Configuration**:
-    *   Create a `.env` file in the root directory.
-    *   Add your `TELEGRAM_TOKEN`, `AUTHORIZED_USERS` (comma-separated user IDs), and `MONGO_URI`.
 
-    ```
-    TELEGRAM_TOKEN=YOUR_TELEGRAM_BOT_TOKEN
-    AUTHORIZED_USERS=123456789
-    MONGO_URI=mongodb://localhost:27017/
-    ```
-
-3.  **Launch**:
-    Execute the deployment script. This will build the necessary Docker containers, install dependencies, and launch all services.
-
-    ```bash
-    chmod +x deploy/deploy_all.sh
-    ./deploy/deploy_all.sh
-    ```
 
 ---
 
-⚡️ **SERVING ATLAS** ⚡️
+🧰 Repository Structure
+
+NEXUS-LEGION-X-OMEGA/
+├── docs/
+│   ├── PROTOCOL_SANITIZED.md
+│   ├── WSL_SETUP.md
+│   └── experimental/
+├── scripts/
+│   ├── setup_wsl.sh
+│   └── deploy_all.sh
+├── .devcontainer/
+├── .github/workflows/ci.yml
+└── src/
+    ├── core/
+    ├── agents/
+    ├── sandbox/
+    └── dashboard/
+
+
+---
+
+🚀 Deployment
+
+Prerequisites
+
+Docker & Docker Compose
+
+Python 3.10+
+
+Node.js + npm
+
+MongoDB running locally or remotely
+
+
+Configure
+
+Create .env in project root:
+
+MONGO_URI=mongodb://localhost:27017/
+ENV=production
+LOG_LEVEL=info
+
+Launch
+
+chmod +x deploy/deploy_all.sh
+./deploy/deploy_all.sh
+
+
+---
+
+🧪 Experimental Mode
+
+All speculative or visionary concepts are isolated in:
+
+docs/experimental/
+
+> Every experiment must be tagged and justified via an ADR (Architecture Decision Record) before merging.
+
+
+
+
+---
+
+🤝 Contribution Protocol
+
+See CONTRIBUTING.md.
+Follow the SANITIZED PROTOCOL before submitting PRs.
+
+[LEGION NOTICE]
+> Unauthorized merges are sandboxed.
+> Only signed commits with verified identities are accepted.
+
+
+---
+
+🧠 System Diagnostics Example
+
+> run status --all
+[CORE AI ENGINE] ........ OK
+[SECURITY SANDBOX] ...... OK
+[NETWORK ROUTES] ........ ENCRYPTED
+[DEVOPS PIPELINE] ....... SYNCED
+[KNOWLEDGE VAULT] ....... INDEXED
+[SYSTEM STATE] .......... OPTIMAL
+
+
+---
+
+🜂 Philosophy
+
+> “We do not predict the future —
+we become the future.”
+
+
+
+
+---
+
+
+
+⚡ LEGION x L.X VEX — SERVING ATLAS ⚡
+
+---
