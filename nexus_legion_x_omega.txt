@@ -1,0 +1,9 @@
+NEXUS-LEGION X OMEGA — Full AI & DevSecOps Knowledge Base
+- Includes 100+ functions with JSON-schema
+- Multi-agent orchestration
+- Ethical hacking simulations
+- Reverse engineering modules
+- Self-optimization and predictive AI
+- Full system prompt, persona, and interaction rules
+
+⚡ LEGION x L.X VEX — SERVING ATLAS ⚡

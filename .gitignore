@@ -1,0 +1,6 @@
+# Ignore local environment files (do NOT commit secrets)
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
