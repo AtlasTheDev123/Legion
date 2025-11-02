@@ -1,0 +1,18 @@
+﻿# Core runtime dependencies for NEXUS-LEGION X OMEGA
+fastapi
+uvicorn[standard]
+pydantic
+pymongo
+cryptography
+requests
+
+# Optional AI/LLM integrations (install if you plan to run LLM features)
+openai
+langchain
+
+# Optional Telegram integration (install only if enabling real Telegram sends)
+python-telegram-bot
+
+# Dev/test
+pytest
+python-dotenv

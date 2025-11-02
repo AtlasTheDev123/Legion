@@ -1,0 +1,151 @@
+﻿[
+  {
+    "name": "run_port_scan",
+    "description": "Perform a port scan against a target host or network segment  ONLY with authorization and in isolated lab environments.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "target_ip": { "type": "string" },
+        "ports": { "type": "string", "description": "Port range, e.g. 1-1024 or comma list" },
+        "authorization_token": { "type": "string" }
+      },
+      "required": ["target_ip","authorization_token"]
+    },
+    "example": { "target_ip": "127.0.0.1", "ports": "1-1024", "authorization_token": "[REDACTED_LAB_AUTH]" }
+  },
+  {
+    "name": "spawn_agent",
+    "description": "Create and start an orchestration agent instance with supplied role and capabilities.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "agent_name": { "type": "string" },
+        "capabilities": { "type": "array", "items": { "type": "string" } },
+        "run_mode": { "type": "string", "enum": ["dry-run","execute"] }
+      },
+      "required": ["agent_name"]
+    },
+    "example": { "agent_name": "orchestrator-1", "capabilities": ["scan","report"], "run_mode": "dry-run" }
+  },
+  {
+    "name": "spawn_subagent",
+    "description": "Spawn a short-lived sub-agent to perform a bounded task and return results to the parent agent.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "parent_agent": { "type": "string" },
+        "task": { "type": "string" },
+        "max_runtime_seconds": { "type": "integer" }
+      },
+      "required": ["parent_agent","task"]
+    },
+    "example": { "parent_agent": "orchestrator-1", "task": "collect-logs", "max_runtime_seconds": 120 }
+  },
+  {
+    "name": "analyze_logs",
+    "description": "Analyze collected logs for suspicious patterns and summarize findings.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "log_paths": { "type": "array", "items": { "type": "string" } },
+        "time_window": { "type": "string", "description": "e.g., 1h, 24h" }
+      },
+      "required": ["log_paths"]
+    },
+    "example": { "log_paths": ["/var/log/auth.log"], "time_window": "24h" }
+  },
+  {
+    "name": "monitor_logs",
+    "description": "Start continuous log monitoring with alerting rules (read-only unless authorized).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "sources": { "type": "array", "items": { "type": "string" } },
+        "alert_rules": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["sources"]
+    },
+    "example": { "sources": ["/var/log/syslog","/var/log/app.log"], "alert_rules": ["failed-login","high-cpu"] }
+  },
+  {
+    "name": "generate_forensics_playbook",
+    "description": "Produce a forensics playbook for a detected incident with step-by-step actions.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "incident_id": { "type": "string" },
+        "severity": { "type": "string", "enum": ["low","medium","high","critical"] }
+      },
+      "required": ["incident_id","severity"]
+    },
+    "example": { "incident_id": "INC-001", "severity": "high" }
+  },
+  {
+    "name": "create_incident_response_runbook",
+    "description": "Generate a runnable incident response runbook with commands and play steps.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "incident_id": { "type": "string" },
+        "systems": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["incident_id","systems"]
+    },
+    "example": { "incident_id": "INC-001", "systems": ["web-01","db-01"] }
+  },
+  {
+    "name": "rotate_secrets",
+    "description": "Rotate credentials or secrets via secret-store APIs. Requires secure vault permissions and audit.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "secret_id": { "type": "string" },
+        "vault": { "type": "string" },
+        "force": { "type": "boolean" }
+      },
+      "required": ["secret_id","vault"]
+    },
+    "example": { "secret_id": "svc/db-user", "vault": "azure-key-vault", "force": false }
+  },
+  {
+    "name": "deploy_application",
+    "description": "Deploy an application artifact to a target environment (staging/production) using approved pipelines.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "artifact_id": { "type": "string" },
+        "environment": { "type": "string", "enum": ["staging","production"] },
+        "strategy": { "type": "string", "enum": ["rolling","blue-green","canary"] }
+      },
+      "required": ["artifact_id","environment"]
+    },
+    "example": { "artifact_id": "atlas-core:1.2.3", "environment": "staging", "strategy": "canary" }
+  },
+  {
+    "name": "monitor_performance",
+    "description": "Collect and summarize performance metrics for services over a time window.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "service": { "type": "string" },
+        "metrics": { "type": "array", "items": { "type": "string" } },
+        "time_window": { "type": "string" }
+      },
+      "required": ["service","metrics"]
+    },
+    "example": { "service": "atlas-api", "metrics": ["cpu","latency"], "time_window": "1h" }
+  },
+  {
+    "name": "generate_architecture_diagram",
+    "description": "Produce a system architecture diagram (textual or mermaid) from code / infra descriptions.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "source": { "type": "string" },
+        "format": { "type": "string", "enum": ["mermaid","plantuml","svg"] }
+      },
+      "required": ["source"]
+    },
+    "example": { "source": "infra/tf", "format": "mermaid" }
+  }
+]

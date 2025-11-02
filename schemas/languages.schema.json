@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft/2020-12/schema",
+  "title": "Programming Language Support",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "enum": [
+        "Python",
+        "JavaScript",
+        "Java",
+        "C++",
+        "Rust",
+        "Go"
+      ]
+    },
+    "versions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "usage": {
+      "type": "string",
+      "description": "Use cases (e.g. AI, backend, embedded)"
+    }
+  },
+  "required": [
+    "name",
+    "versions"
+  ]
+}

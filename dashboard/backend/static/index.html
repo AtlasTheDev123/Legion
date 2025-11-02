@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>NEXUS‑LEGION X OMEGA — Dashboard</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>NEXUS‑LEGION X OMEGA — Function Catalog & Chat</h1>
+      <p id="summary">Loading functions…</p>
+      <input id="filter" placeholder="Search functions by name or description" />
+    </header>
+    <main>
+      <section aria-labelledby="catalog">
+        <h2 id="catalog" style="font-size:14px;margin-top:12px">Function catalog</h2>
+        <ul id="functions"></ul>
+      </section>
+
+      <section aria-labelledby="chat" style="margin-top:18px">
+        <h2 id="chat" style="font-size:14px">Chat (safe demo)</h2>
+        <div id="chatbox" style="max-width:960px;background:#fff;padding:12px;border-radius:6px;border:1px solid #e6e9ee">
+          <div id="messages" style="height:180px;overflow:auto;padding:6px;border:1px solid #f0f0f0;border-radius:4px;background:#fbfcfd"></div>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <input id="chat_input" placeholder="Type a message or function name (e.g., setup_dev_environment)" style="flex:1;padding:8px;border-radius:4px;border:1px solid #ccc" />
+            <button id="send_btn">Send</button>
+          </div>
+          <div style="display:flex;gap:8px;margin-top:8px">
+            <input id="telegram_chat_id" placeholder="Telegram chat id (optional)" style="flex:1;padding:6px;border-radius:4px;border:1px solid #ccc" />
+            <button id="tg_send_btn">Send to Telegram</button>
+            <button id="tg_call_btn">Place Call</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

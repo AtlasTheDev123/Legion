@@ -1,0 +1,8 @@
+﻿{
+  "name": "nexus-dashboard-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "echo 'frontend placeholder' && exit 0"
+  }
+}

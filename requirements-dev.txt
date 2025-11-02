@@ -1,0 +1,6 @@
+# Development & CI tools
+pytest
+ruff
+black
+mypy
+pre-commit

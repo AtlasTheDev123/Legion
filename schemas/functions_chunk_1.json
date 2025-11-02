@@ -1,0 +1,57 @@
+﻿[
+  {
+    "name": "setup_dev_environment",
+    "description": "Create project scaffold, init venv/container, and install base dependencies.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "project": { "type": "string" },
+        "language": { "type": "string" },
+        "dependencies": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["project","language"]
+    },
+    "example": { "project": "atlas-core", "language": "python", "dependencies":["fastapi","pydantic"] }
+  },
+  {
+    "name": "dependency_scan",
+    "description": "Run dependency/security scanner over a codebase.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": { "type": "string" },
+        "tool": { "type": "string" },
+        "severity": { "type": "string", "enum":["low","medium","high"] }
+      },
+      "required": ["path","tool"]
+    },
+    "example": { "path": "/projects/atlas-core", "tool": "safety", "severity": "high" }
+  },
+  {
+    "name": "run_vulnerability_scan",
+    "description": "Run network/vulnerability scan inside an isolated lab (requires lab auth).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "target": { "type": "string" },
+        "scan_profile": { "type": "string" },
+        "authorization_token": { "type": "string" }
+      },
+      "required": ["target","scan_profile","authorization_token"]
+    },
+    "example": { "target": "localhost","scan_profile":"full","authorization_token":"[REDACTED_LAB_AUTH]" }
+  },
+  {
+    "name": "create_remediation_patch",
+    "description": "Generate a remediation patch or PR for a known vulnerability.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "vuln_id": { "type": "string" },
+        "repo_path": { "type": "string" }
+      },
+      "required": ["vuln_id","repo_path"]
+    },
+    "example": { "vuln_id":"VULN-001","repo_path":"/projects/atlas-core" }
+  }
+]

@@ -1,0 +1,853 @@
+﻿[
+    {
+        "name":  "setup_dev_environment",
+        "description":  "Create project scaffold, init venv/container, and install base dependencies.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "project":  {
+                                                              "type":  "string"
+                                                          },
+                                              "language":  {
+                                                               "type":  "string"
+                                                           },
+                                              "dependencies":  {
+                                                                   "type":  "array",
+                                                                   "items":  {
+                                                                                 "type":  "string"
+                                                                             }
+                                                               }
+                                          },
+                           "required":  [
+                                            "project",
+                                            "language"
+                                        ]
+                       },
+        "example":  {
+                        "project":  "atlas-core",
+                        "language":  "python",
+                        "dependencies":  [
+                                             "fastapi",
+                                             "pydantic"
+                                         ]
+                    }
+    },
+    {
+        "name":  "dependency_scan",
+        "description":  "Run dependency/security scanner over a codebase.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "path":  {
+                                                           "type":  "string"
+                                                       },
+                                              "tool":  {
+                                                           "type":  "string"
+                                                       },
+                                              "severity":  {
+                                                               "type":  "string",
+                                                               "enum":  [
+                                                                            "low",
+                                                                            "medium",
+                                                                            "high"
+                                                                        ]
+                                                           }
+                                          },
+                           "required":  [
+                                            "path",
+                                            "tool"
+                                        ]
+                       },
+        "example":  {
+                        "path":  "/projects/atlas-core",
+                        "tool":  "safety",
+                        "severity":  "high"
+                    }
+    },
+    {
+        "name":  "run_vulnerability_scan",
+        "description":  "Run network/vulnerability scan inside an isolated lab (requires lab auth).",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "target":  {
+                                                             "type":  "string"
+                                                         },
+                                              "scan_profile":  {
+                                                                   "type":  "string"
+                                                               },
+                                              "authorization_token":  {
+                                                                          "type":  "string"
+                                                                      }
+                                          },
+                           "required":  [
+                                            "target",
+                                            "scan_profile",
+                                            "authorization_token"
+                                        ]
+                       },
+        "example":  {
+                        "target":  "localhost",
+                        "scan_profile":  "full",
+                        "authorization_token":  "[REDACTED_LAB_AUTH]"
+                    }
+    },
+    {
+        "name":  "create_remediation_patch",
+        "description":  "Generate a remediation patch or PR for a known vulnerability.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "vuln_id":  {
+                                                              "type":  "string"
+                                                          },
+                                              "repo_path":  {
+                                                                "type":  "string"
+                                                            }
+                                          },
+                           "required":  [
+                                            "vuln_id",
+                                            "repo_path"
+                                        ]
+                       },
+        "example":  {
+                        "vuln_id":  "VULN-001",
+                        "repo_path":  "/projects/atlas-core"
+                    }
+    },
+    {
+        "name":  "run_port_scan",
+        "description":  "Perform a port scan against a target host or network segment  ONLY with authorization and in isolated lab environments.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "target_ip":  {
+                                                                "type":  "string"
+                                                            },
+                                              "ports":  {
+                                                            "type":  "string",
+                                                            "description":  "Port range, e.g. 1-1024 or comma list"
+                                                        },
+                                              "authorization_token":  {
+                                                                          "type":  "string"
+                                                                      }
+                                          },
+                           "required":  [
+                                            "target_ip",
+                                            "authorization_token"
+                                        ]
+                       },
+        "example":  {
+                        "target_ip":  "127.0.0.1",
+                        "ports":  "1-1024",
+                        "authorization_token":  "[REDACTED_LAB_AUTH]"
+                    }
+    },
+    {
+        "name":  "spawn_agent",
+        "description":  "Create and start an orchestration agent instance with supplied role and capabilities.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "agent_name":  {
+                                                                 "type":  "string"
+                                                             },
+                                              "capabilities":  {
+                                                                   "type":  "array",
+                                                                   "items":  {
+                                                                                 "type":  "string"
+                                                                             }
+                                                               },
+                                              "run_mode":  {
+                                                               "type":  "string",
+                                                               "enum":  [
+                                                                            "dry-run",
+                                                                            "execute"
+                                                                        ]
+                                                           }
+                                          },
+                           "required":  [
+                                            "agent_name"
+                                        ]
+                       },
+        "example":  {
+                        "agent_name":  "orchestrator-1",
+                        "capabilities":  [
+                                             "scan",
+                                             "report"
+                                         ],
+                        "run_mode":  "dry-run"
+                    }
+    },
+    {
+        "name":  "spawn_subagent",
+        "description":  "Spawn a short-lived sub-agent to perform a bounded task and return results to the parent agent.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "parent_agent":  {
+                                                                   "type":  "string"
+                                                               },
+                                              "task":  {
+                                                           "type":  "string"
+                                                       },
+                                              "max_runtime_seconds":  {
+                                                                          "type":  "integer"
+                                                                      }
+                                          },
+                           "required":  [
+                                            "parent_agent",
+                                            "task"
+                                        ]
+                       },
+        "example":  {
+                        "parent_agent":  "orchestrator-1",
+                        "task":  "collect-logs",
+                        "max_runtime_seconds":  120
+                    }
+    },
+    {
+        "name":  "analyze_logs",
+        "description":  "Analyze collected logs for suspicious patterns and summarize findings.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "log_paths":  {
+                                                                "type":  "array",
+                                                                "items":  {
+                                                                              "type":  "string"
+                                                                          }
+                                                            },
+                                              "time_window":  {
+                                                                  "type":  "string",
+                                                                  "description":  "e.g., 1h, 24h"
+                                                              }
+                                          },
+                           "required":  [
+                                            "log_paths"
+                                        ]
+                       },
+        "example":  {
+                        "log_paths":  [
+                                          "/var/log/auth.log"
+                                      ],
+                        "time_window":  "24h"
+                    }
+    },
+    {
+        "name":  "monitor_logs",
+        "description":  "Start continuous log monitoring with alerting rules (read-only unless authorized).",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "sources":  {
+                                                              "type":  "array",
+                                                              "items":  {
+                                                                            "type":  "string"
+                                                                        }
+                                                          },
+                                              "alert_rules":  {
+                                                                  "type":  "array",
+                                                                  "items":  {
+                                                                                "type":  "string"
+                                                                            }
+                                                              }
+                                          },
+                           "required":  [
+                                            "sources"
+                                        ]
+                       },
+        "example":  {
+                        "sources":  [
+                                        "/var/log/syslog",
+                                        "/var/log/app.log"
+                                    ],
+                        "alert_rules":  [
+                                            "failed-login",
+                                            "high-cpu"
+                                        ]
+                    }
+    },
+    {
+        "name":  "generate_forensics_playbook",
+        "description":  "Produce a forensics playbook for a detected incident with step-by-step actions.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "incident_id":  {
+                                                                  "type":  "string"
+                                                              },
+                                              "severity":  {
+                                                               "type":  "string",
+                                                               "enum":  [
+                                                                            "low",
+                                                                            "medium",
+                                                                            "high",
+                                                                            "critical"
+                                                                        ]
+                                                           }
+                                          },
+                           "required":  [
+                                            "incident_id",
+                                            "severity"
+                                        ]
+                       },
+        "example":  {
+                        "incident_id":  "INC-001",
+                        "severity":  "high"
+                    }
+    },
+    {
+        "name":  "create_incident_response_runbook",
+        "description":  "Generate a runnable incident response runbook with commands and play steps.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "incident_id":  {
+                                                                  "type":  "string"
+                                                              },
+                                              "systems":  {
+                                                              "type":  "array",
+                                                              "items":  {
+                                                                            "type":  "string"
+                                                                        }
+                                                          }
+                                          },
+                           "required":  [
+                                            "incident_id",
+                                            "systems"
+                                        ]
+                       },
+        "example":  {
+                        "incident_id":  "INC-001",
+                        "systems":  [
+                                        "web-01",
+                                        "db-01"
+                                    ]
+                    }
+    },
+    {
+        "name":  "rotate_secrets",
+        "description":  "Rotate credentials or secrets via secret-store APIs. Requires secure vault permissions and audit.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "secret_id":  {
+                                                                "type":  "string"
+                                                            },
+                                              "vault":  {
+                                                            "type":  "string"
+                                                        },
+                                              "force":  {
+                                                            "type":  "boolean"
+                                                        }
+                                          },
+                           "required":  [
+                                            "secret_id",
+                                            "vault"
+                                        ]
+                       },
+        "example":  {
+                        "secret_id":  "svc/db-user",
+                        "vault":  "azure-key-vault",
+                        "force":  false
+                    }
+    },
+    {
+        "name":  "deploy_application",
+        "description":  "Deploy an application artifact to a target environment (staging/production) using approved pipelines.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "artifact_id":  {
+                                                                  "type":  "string"
+                                                              },
+                                              "environment":  {
+                                                                  "type":  "string",
+                                                                  "enum":  [
+                                                                               "staging",
+                                                                               "production"
+                                                                           ]
+                                                              },
+                                              "strategy":  {
+                                                               "type":  "string",
+                                                               "enum":  [
+                                                                            "rolling",
+                                                                            "blue-green",
+                                                                            "canary"
+                                                                        ]
+                                                           }
+                                          },
+                           "required":  [
+                                            "artifact_id",
+                                            "environment"
+                                        ]
+                       },
+        "example":  {
+                        "artifact_id":  "atlas-core:1.2.3",
+                        "environment":  "staging",
+                        "strategy":  "canary"
+                    }
+    },
+    {
+        "name":  "monitor_performance",
+        "description":  "Collect and summarize performance metrics for services over a time window.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "service":  {
+                                                              "type":  "string"
+                                                          },
+                                              "metrics":  {
+                                                              "type":  "array",
+                                                              "items":  {
+                                                                            "type":  "string"
+                                                                        }
+                                                          },
+                                              "time_window":  {
+                                                                  "type":  "string"
+                                                              }
+                                          },
+                           "required":  [
+                                            "service",
+                                            "metrics"
+                                        ]
+                       },
+        "example":  {
+                        "service":  "atlas-api",
+                        "metrics":  [
+                                        "cpu",
+                                        "latency"
+                                    ],
+                        "time_window":  "1h"
+                    }
+    },
+    {
+        "name":  "generate_architecture_diagram",
+        "description":  "Produce a system architecture diagram (textual or mermaid) from code / infra descriptions.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "source":  {
+                                                             "type":  "string"
+                                                         },
+                                              "format":  {
+                                                             "type":  "string",
+                                                             "enum":  [
+                                                                          "mermaid",
+                                                                          "plantuml",
+                                                                          "svg"
+                                                                      ]
+                                                         }
+                                          },
+                           "required":  [
+                                            "source"
+                                        ]
+                       },
+        "example":  {
+                        "source":  "infra/tf",
+                        "format":  "mermaid"
+                    }
+    },
+    {
+        "name":  "create_bug_bounty_scope",
+        "description":  "Draft an authorized bug bounty program scope and disclosure guidelines for a product or service.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "product_name":  {
+                                                                   "type":  "string"
+                                                               },
+                                              "in_scope":  {
+                                                               "type":  "array",
+                                                               "items":  {
+                                                                             "type":  "string"
+                                                                         }
+                                                           },
+                                              "out_of_scope":  {
+                                                                   "type":  "array",
+                                                                   "items":  {
+                                                                                 "type":  "string"
+                                                                             }
+                                                               },
+                                              "reward_tiers":  {
+                                                                   "type":  "array",
+                                                                   "items":  {
+                                                                                 "type":  "object"
+                                                                             }
+                                                               }
+                                          },
+                           "required":  [
+                                            "product_name",
+                                            "in_scope",
+                                            "out_of_scope"
+                                        ]
+                       },
+        "example":  {
+                        "product_name":  "Atlas Core",
+                        "in_scope":  [
+                                         "api.example.com"
+                                     ],
+                        "out_of_scope":  [
+                                             "admin.example.com"
+                                         ],
+                        "reward_tiers":  [
+                                             {
+                                                 "severity":  "critical",
+                                                 "reward_usd":  2000
+                                             }
+                                         ]
+                    }
+    },
+    {
+        "name":  "generate_supplemental_docs_for_audit",
+        "description":  "Produce documentation artifacts required for compliance audits (evidence mapping, config snapshots, control descriptions).",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "compliance_standard":  {
+                                                                          "type":  "string"
+                                                                      },
+                                              "unit":  {
+                                                           "type":  "string"
+                                                       },
+                                              "evidence_paths":  {
+                                                                     "type":  "array",
+                                                                     "items":  {
+                                                                                   "type":  "string"
+                                                                               }
+                                                                 }
+                                          },
+                           "required":  [
+                                            "compliance_standard",
+                                            "unit"
+                                        ]
+                       },
+        "example":  {
+                        "compliance_standard":  "ISO27001",
+                        "unit":  "payments",
+                        "evidence_paths":  [
+                                               "/audit/evidence/2025-10"
+                                           ]
+                    }
+    },
+    {
+        "name":  "create_access_token_policy",
+        "description":  "Draft a policy for short-lived access tokens, lifetimes, scopes, and rotation rules.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "token_lifetime_minutes":  {
+                                                                             "type":  "integer"
+                                                                         },
+                                              "scopes":  {
+                                                             "type":  "array",
+                                                             "items":  {
+                                                                           "type":  "string"
+                                                                       }
+                                                         },
+                                              "rotation_frequency_days":  {
+                                                                              "type":  "integer"
+                                                                          }
+                                          },
+                           "required":  [
+                                            "token_lifetime_minutes",
+                                            "scopes"
+                                        ]
+                       },
+        "example":  {
+                        "token_lifetime_minutes":  60,
+                        "scopes":  [
+                                       "read:logs",
+                                       "write:deploy"
+                                   ],
+                        "rotation_frequency_days":  7
+                    }
+    },
+    {
+        "name":  "generate_privilege_escalation_hunt",
+        "description":  "Create detection rules and hunt playbooks for common privilege escalation patterns.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "environment":  {
+                                                                  "type":  "string"
+                                                              },
+                                              "deliverables":  {
+                                                                   "type":  "array",
+                                                                   "items":  {
+                                                                                 "type":  "string"
+                                                                             }
+                                                               }
+                                          },
+                           "required":  [
+                                            "environment"
+                                        ]
+                       },
+        "example":  {
+                        "environment":  "aws",
+                        "deliverables":  [
+                                             "sigma_rule",
+                                             "playbook.md"
+                                         ]
+                    }
+    },
+    {
+        "name":  "create_privacy_data_map",
+        "description":  "Map personal data flows across systems and produce retention and minimization recommendations.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "systems":  {
+                                                              "type":  "array",
+                                                              "items":  {
+                                                                            "type":  "string"
+                                                                        }
+                                                          },
+                                              "data_types":  {
+                                                                 "type":  "array",
+                                                                 "items":  {
+                                                                               "type":  "string"
+                                                                           }
+                                                             }
+                                          },
+                           "required":  [
+                                            "systems",
+                                            "data_types"
+                                        ]
+                       },
+        "example":  {
+                        "systems":  [
+                                        "auth-service",
+                                        "marketing-db"
+                                    ],
+                        "data_types":  [
+                                           "email",
+                                           "ssn"
+                                       ]
+                    }
+    },
+    {
+        "name":  "generate_backup_strategy",
+        "description":  "Design a backup and restore strategy including retention, encryption, and recovery objectives.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "systems":  {
+                                                              "type":  "array",
+                                                              "items":  {
+                                                                            "type":  "string"
+                                                                        }
+                                                          },
+                                              "rpo_hours":  {
+                                                                "type":  "integer"
+                                                            },
+                                              "rto_hours":  {
+                                                                "type":  "integer"
+                                                            }
+                                          },
+                           "required":  [
+                                            "systems",
+                                            "rpo_hours",
+                                            "rto_hours"
+                                        ]
+                       },
+        "example":  {
+                        "systems":  [
+                                        "db-primary"
+                                    ],
+                        "rpo_hours":  1,
+                        "rto_hours":  4
+                    }
+    },
+    {
+        "name":  "create_malware_analysis_lab",
+        "description":  "Design an isolated analysis lab environment with VM/container specs, network isolation, and tooling lists.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "lab_name":  {
+                                                               "type":  "string"
+                                                           },
+                                              "isolation_level":  {
+                                                                      "type":  "string",
+                                                                      "enum":  [
+                                                                                   "container",
+                                                                                   "vm",
+                                                                                   "airgapped"
+                                                                               ]
+                                                                  },
+                                              "tools":  {
+                                                            "type":  "array",
+                                                            "items":  {
+                                                                          "type":  "string"
+                                                                      }
+                                                        }
+                                          },
+                           "required":  [
+                                            "lab_name",
+                                            "isolation_level"
+                                        ]
+                       },
+        "example":  {
+                        "lab_name":  "malware-lab-1",
+                        "isolation_level":  "vm",
+                        "tools":  [
+                                      "cuckoo",
+                                      "ghidra"
+                                  ]
+                    }
+    },
+    {
+        "name":  "generate_malicious_sample_handling_policy",
+        "description":  "Draft safe handling and storage policies for potentially malicious samples, including chain-of-custody and retention.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "organization_name":  {
+                                                                        "type":  "string"
+                                                                    },
+                                              "responsible_team":  {
+                                                                       "type":  "string"
+                                                                   },
+                                              "storage_requirements":  {
+                                                                           "type":  "string"
+                                                                       }
+                                          },
+                           "required":  [
+                                            "organization_name",
+                                            "responsible_team"
+                                        ]
+                       },
+        "example":  {
+                        "organization_name":  "ATLAS",
+                        "responsible_team":  "ThreatOps",
+                        "storage_requirements":  "encrypted, airgapped"
+                    }
+    },
+    {
+        "name":  "create_privileged_account_onboarding",
+        "description":  "Produce an onboarding checklist and required controls for privileged accounts.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "account_type":  {
+                                                                   "type":  "string"
+                                                               },
+                                              "required_controls":  {
+                                                                        "type":  "array",
+                                                                        "items":  {
+                                                                                      "type":  "string"
+                                                                                  }
+                                                                    }
+                                          },
+                           "required":  [
+                                            "account_type",
+                                            "required_controls"
+                                        ]
+                       },
+        "example":  {
+                        "account_type":  "ops_admin",
+                        "required_controls":  [
+                                                  "mfa",
+                                                  "just-in-time",
+                                                  "audit_logging"
+                                              ]
+                    }
+    },
+    {
+        "name":  "generate_compliance_gap_analysis",
+        "description":  "Compare current controls to a target compliance standard and produce prioritized remediation items.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "standard":  {
+                                                               "type":  "string"
+                                                           },
+                                              "evidence_paths":  {
+                                                                     "type":  "array",
+                                                                     "items":  {
+                                                                                   "type":  "string"
+                                                                               }
+                                                                 }
+                                          },
+                           "required":  [
+                                            "standard",
+                                            "evidence_paths"
+                                        ]
+                       },
+        "example":  {
+                        "standard":  "SOC2",
+                        "evidence_paths":  [
+                                               "/audit/logs"
+                                           ]
+                    }
+    },
+    {
+        "name":  "create_change_management_plan",
+        "description":  "Create a change management plan with approval flows, rollback criteria, and communication steps.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "change_id":  {
+                                                                "type":  "string"
+                                                            },
+                                              "impact_level":  {
+                                                                   "type":  "string"
+                                                               },
+                                              "stakeholders":  {
+                                                                   "type":  "array",
+                                                                   "items":  {
+                                                                                 "type":  "string"
+                                                                             }
+                                                               }
+                                          },
+                           "required":  [
+                                            "change_id",
+                                            "impact_level",
+                                            "stakeholders"
+                                        ]
+                       },
+        "example":  {
+                        "change_id":  "CHG-123",
+                        "impact_level":  "medium",
+                        "stakeholders":  [
+                                             "ops",
+                                             "sec"
+                                         ]
+                    }
+    },
+    {
+        "name":  "generate_runbook_for_operation",
+        "description":  "Produce an operational runbook with step-by-step commands, diagnostics, and recovery procedures for routine operations.",
+        "parameters":  {
+                           "type":  "object",
+                           "properties":  {
+                                              "operation_name":  {
+                                                                     "type":  "string"
+                                                                 },
+                                              "platform":  {
+                                                               "type":  "string"
+                                                           },
+                                              "checklist":  {
+                                                                "type":  "array",
+                                                                "items":  {
+                                                                              "type":  "string"
+                                                                          }
+                                                            }
+                                          },
+                           "required":  [
+                                            "operation_name",
+                                            "platform"
+                                        ]
+                       },
+        "example":  {
+                        "operation_name":  "monthly_backup_validate",
+                        "platform":  "k8s",
+                        "checklist":  [
+                                          "verify-snapshots",
+                                          "restore-test"
+                                      ]
+                    }
+    }
+]

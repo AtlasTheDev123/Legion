@@ -1,0 +1,167 @@
+﻿[
+  {
+    "name": "create_bug_bounty_scope",
+    "description": "Draft an authorized bug bounty program scope and disclosure guidelines for a product or service.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "product_name": { "type": "string" },
+        "in_scope": { "type": "array", "items": { "type": "string" } },
+        "out_of_scope": { "type": "array", "items": { "type": "string" } },
+        "reward_tiers": { "type": "array", "items": { "type": "object" } }
+      },
+      "required": ["product_name","in_scope","out_of_scope"]
+    },
+    "example": { "product_name": "Atlas Core", "in_scope": ["api.example.com"], "out_of_scope": ["admin.example.com"], "reward_tiers": [{"severity":"critical","reward_usd":2000}] }
+  },
+  {
+    "name": "generate_supplemental_docs_for_audit",
+    "description": "Produce documentation artifacts required for compliance audits (evidence mapping, config snapshots, control descriptions).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "compliance_standard": { "type": "string" },
+        "unit": { "type": "string" },
+        "evidence_paths": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["compliance_standard","unit"]
+    },
+    "example": { "compliance_standard": "ISO27001", "unit": "payments", "evidence_paths": ["/audit/evidence/2025-10"] }
+  },
+  {
+    "name": "create_access_token_policy",
+    "description": "Draft a policy for short-lived access tokens, lifetimes, scopes, and rotation rules.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "token_lifetime_minutes": { "type": "integer" },
+        "scopes": { "type": "array", "items": { "type": "string" } },
+        "rotation_frequency_days": { "type": "integer" }
+      },
+      "required": ["token_lifetime_minutes","scopes"]
+    },
+    "example": { "token_lifetime_minutes": 60, "scopes": ["read:logs","write:deploy"], "rotation_frequency_days": 7 }
+  },
+  {
+    "name": "generate_privilege_escalation_hunt",
+    "description": "Create detection rules and hunt playbooks for common privilege escalation patterns.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "environment": { "type": "string" },
+        "deliverables": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["environment"]
+    },
+    "example": { "environment": "aws", "deliverables": ["sigma_rule","playbook.md"] }
+  },
+  {
+    "name": "create_privacy_data_map",
+    "description": "Map personal data flows across systems and produce retention and minimization recommendations.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "systems": { "type": "array", "items": { "type": "string" } },
+        "data_types": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["systems","data_types"]
+    },
+    "example": { "systems": ["auth-service","marketing-db"], "data_types": ["email","ssn"] }
+  },
+  {
+    "name": "generate_backup_strategy",
+    "description": "Design a backup and restore strategy including retention, encryption, and recovery objectives.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "systems": { "type": "array", "items": { "type": "string" } },
+        "rpo_hours": { "type": "integer" },
+        "rto_hours": { "type": "integer" }
+      },
+      "required": ["systems","rpo_hours","rto_hours"]
+    },
+    "example": { "systems": ["db-primary"], "rpo_hours": 1, "rto_hours": 4 }
+  },
+  {
+    "name": "create_malware_analysis_lab",
+    "description": "Design an isolated analysis lab environment with VM/container specs, network isolation, and tooling lists.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "lab_name": { "type": "string" },
+        "isolation_level": { "type": "string", "enum": ["container","vm","airgapped"] },
+        "tools": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["lab_name","isolation_level"]
+    },
+    "example": { "lab_name": "malware-lab-1", "isolation_level": "vm", "tools": ["cuckoo","ghidra"] }
+  },
+  {
+    "name": "generate_malicious_sample_handling_policy",
+    "description": "Draft safe handling and storage policies for potentially malicious samples, including chain-of-custody and retention.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "organization_name": { "type": "string" },
+        "responsible_team": { "type": "string" },
+        "storage_requirements": { "type": "string" }
+      },
+      "required": ["organization_name","responsible_team"]
+    },
+    "example": { "organization_name": "ATLAS", "responsible_team": "ThreatOps", "storage_requirements": "encrypted, airgapped" }
+  },
+  {
+    "name": "create_privileged_account_onboarding",
+    "description": "Produce an onboarding checklist and required controls for privileged accounts.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "account_type": { "type": "string" },
+        "required_controls": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["account_type","required_controls"]
+    },
+    "example": { "account_type": "ops_admin", "required_controls": ["mfa","just-in-time","audit_logging"] }
+  },
+  {
+    "name": "generate_compliance_gap_analysis",
+    "description": "Compare current controls to a target compliance standard and produce prioritized remediation items.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "standard": { "type": "string" },
+        "evidence_paths": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["standard","evidence_paths"]
+    },
+    "example": { "standard": "SOC2", "evidence_paths": ["/audit/logs"] }
+  },
+  {
+    "name": "create_change_management_plan",
+    "description": "Create a change management plan with approval flows, rollback criteria, and communication steps.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "change_id": { "type": "string" },
+        "impact_level": { "type": "string" },
+        "stakeholders": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["change_id","impact_level","stakeholders"]
+    },
+    "example": { "change_id": "CHG-123", "impact_level": "medium", "stakeholders": ["ops","sec"] }
+  },
+  {
+    "name": "generate_runbook_for_operation",
+    "description": "Produce an operational runbook with step-by-step commands, diagnostics, and recovery procedures for routine operations.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "operation_name": { "type": "string" },
+        "platform": { "type": "string" },
+        "checklist": { "type": "array", "items": { "type": "string" } }
+      },
+      "required": ["operation_name","platform"]
+    },
+    "example": { "operation_name": "monthly_backup_validate", "platform": "k8s", "checklist": ["verify-snapshots","restore-test"] }
+  }
+]

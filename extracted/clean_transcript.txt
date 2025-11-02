@@ -1,0 +1,5 @@
+﻿User: add every function ,tools, language and etc
+
+Assistant: [sanitized excerpts and manifest summary]
+- Purpose: End-to-end DevSecOps orchestration: scaffold, dependency scan, isolated lab simulation, vulnerability scan, and remediation patch generation.
+- Audit: actor: "NEXUS-LEGION X OMEGA"; timestamp: 2025-11-02T03:30:00Z

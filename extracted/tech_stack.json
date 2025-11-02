@@ -1,0 +1,12 @@
+﻿{
+  "programming": {
+    "fullStack": {
+      "languages": ["JavaScript","TypeScript","Python","Java","C#",".NET","Ruby","PHP","Go","Rust"],
+      "frameworks": ["React","Angular","Vue.js","Node.js","Django","Flask","Spring Boot","Rails","Laravel"]
+    },
+    "scripting": ["Bash","PowerShell","Python","Ruby","Perl","Lua"],
+    "smartContracts": ["Solidity","Vyper","Rust","Move","Cairo","Plutus","Michelson"],
+    "embedded": ["C","C++","Rust","Python(MicroPython)","Assembly"],
+    "dataProcessing": ["Python","R","SQL","Scala","Java","Julia","C++","JavaScript"]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "function_call": [
+    {
+      "name": "function_1",
+      "arguments": {
+        "args": {
+          "task": "setup_env"
+        }
+      }
+    },
+    {
+      "name": "function_2",
+      "arguments": {
+        "args": {
+          "target": "lab",
+          "scan": "quick"
+        }
+      }
+    },
+    {
+      "name": "function_3",
+      "arguments": {
+        "args": {
+          "role": "recon",
+          "tasks": [
+            "scan",
+            "report"
+          ]
+        }
+      }
+    }
+  ],
+  "audit": {
+    "actor": "NEXUS-LEGION X OMEGA",
+    "timestamp": "2025-11-02T03:00:00Z",
+    "authorization_provided": "FULL_ACCESS_OMEGA"
+  }
+}
