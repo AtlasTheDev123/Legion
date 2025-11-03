@@ -1,0 +1,10 @@
+            - name: Setup CML (Continuous Machine Learning)
+  # You may pin to the exact commit or the version.
+  # uses: iterative/setup-cml@f12ea7685438c1fc438d50f77519b3860cf5fa98
+  uses: iterative/setup-cml@v2.0.1
+  with:
+    # The version of CML to install (e.g. '3.0.0').
+    version: # optional, default is latest
+    # Whether to install Vega tools
+    vega: # optional, default is true
+          
