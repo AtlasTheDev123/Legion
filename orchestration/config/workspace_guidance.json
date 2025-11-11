@@ -1,0 +1,187 @@
+{
+  "version": "1.0.0",
+  "workspace_guidance_system": {
+    "enabled": true,
+    "interactive_tutorials": true,
+    "contextual_help": true,
+    "progressive_onboarding": true
+  },
+  "tutorials": [
+    {
+      "id": "quickstart",
+      "title": "Quick Start Guide",
+      "difficulty": "beginner",
+      "duration_minutes": 10,
+      "topics": ["installation", "first_run", "basic_commands"],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Install Dependencies",
+          "description": "Install required packages and tools",
+          "commands": ["pip install -r requirements.txt"],
+          "validation": "check_dependencies"
+        },
+        {
+          "step": 2,
+          "title": "Configure Environment",
+          "description": "Set up environment variables and configuration",
+          "commands": ["copy .env.example .env"],
+          "validation": "check_env_file"
+        },
+        {
+          "step": 3,
+          "title": "Run First Test",
+          "description": "Verify installation with test suite",
+          "commands": ["python -m pytest tests/"],
+          "validation": "tests_pass"
+        }
+      ]
+    },
+    {
+      "id": "orchestration_basics",
+      "title": "Orchestration System Basics",
+      "difficulty": "intermediate",
+      "duration_minutes": 20,
+      "topics": ["bat_scripts", "personas", "logging"],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Understand Directory Structure",
+          "description": "Learn about the orchestration directory layout",
+          "reference": "orchestration/README.md"
+        },
+        {
+          "step": 2,
+          "title": "Run UNIMIND Master Script",
+          "description": "Execute the main orchestration controller",
+          "commands": ["unimind_lvx_master.bat"],
+          "validation": "check_logs"
+        },
+        {
+          "step": 3,
+          "title": "Review Logs",
+          "description": "Understand multi-panel logging system",
+          "reference": "orchestration/logs/"
+        }
+      ]
+    },
+    {
+      "id": "persona_system",
+      "title": "Working with AI Personas",
+      "difficulty": "advanced",
+      "duration_minutes": 30,
+      "topics": ["persona_schema", "role_switching", "context_management"],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Explore Persona Schema",
+          "description": "Understand the persona definition format",
+          "reference": "models/personas/legion_x_controller.json"
+        },
+        {
+          "step": 2,
+          "title": "Create Custom Persona",
+          "description": "Design and implement a custom persona",
+          "validation": "persona_validates"
+        },
+        {
+          "step": 3,
+          "title": "Load and Test Persona",
+          "description": "Load persona and test role-specific behaviors",
+          "commands": ["load_persona custom_persona"],
+          "validation": "persona_active"
+        }
+      ]
+    },
+    {
+      "id": "security_hardening",
+      "title": "Security Best Practices",
+      "difficulty": "advanced",
+      "duration_minutes": 25,
+      "topics": ["manifest_validation", "safety_policies", "secure_logging"],
+      "steps": [
+        {
+          "step": 1,
+          "title": "Generate Baseline Manifest",
+          "description": "Create SHA-256 manifest for integrity checking",
+          "commands": ["create_baseline_manifest"],
+          "validation": "manifest_exists"
+        },
+        {
+          "step": 2,
+          "title": "Enable Manifest Validation",
+          "description": "Configure automatic manifest checking",
+          "reference": "orchestration/config/baseline_manifest.sha256"
+        },
+        {
+          "step": 3,
+          "title": "Review Safety Policies",
+          "description": "Understand persona safety constraints",
+          "reference": "models/personas/"
+        }
+      ]
+    }
+  ],
+  "contextual_help": {
+    "triggers": {
+      "on_error": {
+        "enabled": true,
+        "suggest_fixes": true,
+        "search_docs": true
+      },
+      "on_command": {
+        "enabled": true,
+        "show_examples": true,
+        "related_commands": true
+      },
+      "on_config_change": {
+        "enabled": true,
+        "validate_changes": true,
+        "warn_breaking": true
+      }
+    },
+    "help_sources": [
+      "inline_documentation",
+      "readme_files",
+      "examples_directory",
+      "community_forums",
+      "official_docs"
+    ]
+  },
+  "role_guidance": {
+    "developer": {
+      "focus": ["code_quality", "testing", "security"],
+      "suggested_tools": ["code_analyzer", "debug_assistant", "security_scanner"],
+      "recommended_tutorials": ["orchestration_basics", "security_hardening"]
+    },
+    "devops": {
+      "focus": ["deployment", "monitoring", "automation"],
+      "suggested_tools": ["task_orchestrator", "system_monitor", "log_aggregator"],
+      "recommended_tutorials": ["orchestration_basics", "security_hardening"]
+    },
+    "researcher": {
+      "focus": ["experimentation", "data_analysis", "ml_models"],
+      "suggested_tools": ["quantum_simulator", "neural_architecture_search"],
+      "recommended_tutorials": ["persona_system", "security_hardening"]
+    },
+    "content_creator": {
+      "focus": ["media_processing", "content_generation", "monetization"],
+      "suggested_tools": ["content_generator", "banner_creator", "affiliate_tracker"],
+      "recommended_tutorials": ["quickstart"]
+    }
+  },
+  "interactive_prompts": {
+    "enabled": true,
+    "frequency": "contextual",
+    "tips_of_the_day": true,
+    "progress_tracking": true,
+    "achievement_system": false
+  },
+  "documentation_links": {
+    "main_readme": "README.md",
+    "architecture": "docs/architecture.md",
+    "api_reference": "docs/function_reference.md",
+    "contributing": "CONTRIBUTING.md",
+    "security": "SECURITY.md"
+  }
+}

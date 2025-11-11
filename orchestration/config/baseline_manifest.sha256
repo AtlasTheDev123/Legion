@@ -1,0 +1,26 @@
+# UNIMIND LVX Baseline Manifest
+# Generated: 2025-11-11
+# Format: SHA256 *filename
+# 
+# This file contains SHA-256 checksums for critical orchestration files
+# Use manifest_validator.bat to verify integrity
+# To regenerate: Run unimind_lvx_master.bat init
+
+# Note: This is a placeholder manifest
+# Run the orchestration system initialization to generate actual hashes
+# Command: cd orchestration\bat && unimind_lvx_master.bat init
+
+# Critical BAT Scripts
+# SHA256 hashes will be calculated on first run
+
+# Helper Modules
+# SHA256 hashes will be calculated on first run
+
+# Configuration Files
+# SHA256 hashes will be calculated on first run
+
+# Persona Files
+# SHA256 hashes will be calculated on first run
+
+# PowerShell Scripts
+# SHA256 hashes will be calculated on first run
