@@ -4,3 +4,9 @@
 # Python cache
 __pycache__/
 *.py[cod]
+
+# Orchestration runtime files
+orchestration/logs/
+orchestration/temp/
+orchestration/backups/
+orchestration/config/session_context.json
