@@ -1,5 +1,5 @@
 
-# ⚡ NEXUS-LEGION-X-OMEGA ⚡
+# ⚡ ATLAS-3I ⚡
 
 > **Core Principle:**  
 > “Next is now. We merge code, intelligence, and security into a singular, unstoppable framework.”
@@ -190,4 +190,4 @@ we become the future.”
 
 ⚡ LEGION x L.X VEX — SERVING ATLAS ⚡
 
----
+---https://chatgpt.com/g/g-p-68d83d56a6988191b78e620ef987863d-cyberkeriscom/project
