@@ -186,8 +186,11 @@ we become the future.”
 
 ---
 
+## 🔗 Related Resources
 
+**ChatGPT Project Integration:**  
+This repository integrates content and configurations from the [cyberkeris.com ChatGPT Project](https://chatgpt.com/g/g-p-68d83d56a6988191b78e620ef987863d-cyberkeriscom/project).
+
+---
 
 ⚡ LEGION x L.X VEX — SERVING ATLAS ⚡
-
----https://chatgpt.com/g/g-p-68d83d56a6988191b78e620ef987863d-cyberkeriscom/project
