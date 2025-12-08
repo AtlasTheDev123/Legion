@@ -1,8 +1,8 @@
 
-# ⚡ ATLAS-3I ⚡
+# ⚡ Legion-Ai ⚡
 
 > **Core Principle:**  
-> “Next is now. We merge code, intelligence, and security into a singular, unstoppable framework.”
+> “hyper-intelligence Ai. Next is now. We merge code, intelligence, and security into a singular, unstoppable framework.”
 
 ---
 
