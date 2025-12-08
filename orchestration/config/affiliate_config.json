@@ -1,0 +1,106 @@
+{
+  "version": "1.0.0",
+  "affiliate_system": {
+    "enabled": true,
+    "tracking_enabled": true,
+    "analytics_enabled": true
+  },
+  "platforms": [
+    {
+      "id": "amazon_associates",
+      "name": "Amazon Associates",
+      "enabled": true,
+      "tracking_id": "PLACEHOLDER_ASSOCIATE_ID",
+      "commission_rate": "1-10%",
+      "api_key": "",
+      "categories": ["tech", "books", "electronics", "software"]
+    },
+    {
+      "id": "github_sponsors",
+      "name": "GitHub Sponsors",
+      "enabled": true,
+      "profile_url": "https://github.com/sponsors/AtlasTheDev123",
+      "tiers": ["supporter", "contributor", "patron"],
+      "categories": ["open_source", "development", "tools"]
+    },
+    {
+      "id": "digital_ocean",
+      "name": "DigitalOcean Referrals",
+      "enabled": true,
+      "referral_link": "PLACEHOLDER_REFERRAL_LINK",
+      "credit_amount": "$200",
+      "categories": ["cloud", "hosting", "infrastructure"]
+    },
+    {
+      "id": "vultr",
+      "name": "Vultr Cloud",
+      "enabled": true,
+      "referral_link": "PLACEHOLDER_REFERRAL_LINK",
+      "credit_amount": "$100",
+      "categories": ["cloud", "vps", "compute"]
+    }
+  ],
+  "link_templates": {
+    "amazon": "https://www.amazon.com/dp/{product_id}?tag={tracking_id}",
+    "generic": "{base_url}?ref={affiliate_id}"
+  },
+  "tracking": {
+    "cookie_duration_days": 30,
+    "track_clicks": true,
+    "track_conversions": true,
+    "track_revenue": true,
+    "log_to_file": true,
+    "log_path": "logs/affiliate"
+  },
+  "banners": {
+    "enabled": true,
+    "templates_path": "config/banner_templates",
+    "output_path": "media/affiliate_banners",
+    "formats": ["png", "jpg", "svg"],
+    "sizes": [
+      {"name": "leaderboard", "width": 728, "height": 90},
+      {"name": "medium_rectangle", "width": 300, "height": 250},
+      {"name": "wide_skyscraper", "width": 160, "height": 600},
+      {"name": "large_rectangle", "width": 336, "height": 280}
+    ]
+  },
+  "campaigns": [
+    {
+      "id": "launch_2025",
+      "name": "NEXUS-LEGION-X-OMEGA Launch Campaign",
+      "active": true,
+      "start_date": "2025-01-01",
+      "end_date": "2025-12-31",
+      "platforms": ["github_sponsors", "digital_ocean", "vultr"],
+      "target_audience": "developers, ai_enthusiasts, devops_professionals"
+    }
+  ],
+  "revenue_sharing": {
+    "enabled": false,
+    "contributors_percentage": 0,
+    "reinvestment_percentage": 100,
+    "allocation": {
+      "development": 60,
+      "infrastructure": 25,
+      "community": 15
+    }
+  },
+  "compliance": {
+    "disclosure_required": true,
+    "disclosure_text": "This site may contain affiliate links. We may earn a commission if you make a purchase through these links, at no additional cost to you.",
+    "gdpr_compliant": true,
+    "ccpa_compliant": true
+  },
+  "analytics": {
+    "dashboard_enabled": true,
+    "metrics": [
+      "total_clicks",
+      "conversion_rate",
+      "revenue_generated",
+      "top_performing_links",
+      "geographic_distribution"
+    ],
+    "reporting_interval": "daily",
+    "export_formats": ["json", "csv", "pdf"]
+  }
+}
