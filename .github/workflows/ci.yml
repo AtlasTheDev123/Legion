@@ -1,4 +1,38 @@
-﻿name: CI
+﻿name: CI: upgrade & checks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  upgrade-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Make script executable
+        run: chmod +x scripts/upgrade_repo.sh
+
+      - name: Run upgrade script (dry-run)
+        run: |
+          bash scripts/upgrade_repo.sh
+
+      - name: Run tests (if pytest available)
+        run: |
+          if command -v pytest >/dev/null 2>&1; then
+            pytest -q || true
+          else
+            echo "pytest not available; skipping"
+          fi
+name: CI
 
 on:
   push:

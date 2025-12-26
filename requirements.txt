@@ -6,9 +6,14 @@ pymongo
 cryptography
 requests
 
-# Optional AI/LLM integrations (install if you plan to run LLM features)
+# AI/LLM integrations
 openai
+anthropic
 langchain
+langchain-core
+langchain-community
+langchain-anthropic
+langchain-mistralai
 
 # Optional Telegram integration (install only if enabling real Telegram sends)
 python-telegram-bot

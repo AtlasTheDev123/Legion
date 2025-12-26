@@ -1,4 +1,4 @@
-﻿"""Sandboxed simulator — returns canned, non-actionable outputs for safe testing."""
+"""Sandboxed simulator — returns canned, non-actionable outputs for safe testing."""
 import time
 
 def simulate_execution(function_name: str, params: dict) -> dict:

@@ -1,4 +1,4 @@
-﻿"""Database helpers (stub)."""
+"""Database helpers (stub)."""
 from pydantic import BaseSettings
 from typing import Optional
 

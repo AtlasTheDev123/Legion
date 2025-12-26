@@ -1,4 +1,4 @@
-﻿"""Simple agent manager stub."""
+"""Simple agent manager stub."""
 from typing import Dict, Any
 
 class AgentManager:

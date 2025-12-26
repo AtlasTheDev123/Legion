@@ -1,4 +1,4 @@
-﻿"""Minimal encryption helpers (optional dependency: cryptography)."""
+"""Minimal encryption helpers (optional dependency: cryptography)."""
 
 try:
     from cryptography.fernet import Fernet
