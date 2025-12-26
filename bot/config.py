@@ -1,4 +1,4 @@
-﻿import os
+import os
 
 ALLOWED_USERS = os.environ.get("ALLOWED_USERS", "").split(',') if os.environ.get("ALLOWED_USERS") else []
 BOT_TOKEN = os.environ.get("BOT_TOKEN")

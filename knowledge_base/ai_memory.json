@@ -1,1 +1,904 @@
-﻿[]
+[
+  {
+    "memory_id": "mem_ec79eef47550",
+    "content": "Created plan for: Design and implement a secure authentication system -> Plan generated successfully",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:55:32.008094",
+    "last_accessed": "2025-12-08T07:55:32.008097",
+    "tags": [
+      "planning",
+      "autonomous"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_66bb99a7bf8e",
+    "content": "Executed task: Design and implement a secure authentication system -> Successfully completed using tree_of_thought strategy",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:55:32.008473",
+    "last_accessed": "2025-12-08T07:55:32.008474",
+    "tags": [
+      "execution",
+      "orchestration"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_1c71df57955e",
+    "content": "Solved problem using chain_of_thought -> Solution confidence: 70.00%",
+    "importance": 0.8,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:55:32.009026",
+    "last_accessed": "2025-12-08T07:55:32.009028",
+    "tags": [
+      "problem_solving",
+      "chain_of_thought"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_2b894fad5199",
+    "content": "Created plan for: Optimize AI system performance and accuracy -> Plan generated successfully",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:55:32.009431",
+    "last_accessed": "2025-12-08T07:55:32.009433",
+    "tags": [
+      "planning",
+      "autonomous"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_7255a4f9f59e",
+    "content": "Created plan for: Create a REST API for user management -> Plan generated successfully",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.242974",
+    "last_accessed": "2025-12-08T07:59:25.242976",
+    "tags": [
+      "planning",
+      "autonomous"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_566c4a2864ee",
+    "content": "Executed task: Create a REST API for user management -> Successfully completed using tree_of_thought strategy",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.243549",
+    "last_accessed": "2025-12-08T07:59:25.243552",
+    "tags": [
+      "execution",
+      "orchestration"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_ee2521b514d0",
+    "content": "Implemented Redis caching for API responses -> Response time reduced from 200ms to 20ms",
+    "importance": 0.9,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.244097",
+    "last_accessed": "2025-12-08T07:59:25.244108",
+    "tags": [
+      "performance",
+      "caching",
+      "redis"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_b2e441763c91",
+    "content": "Attempted to scale database vertically -> Hit hardware limits, horizontal scaling needed",
+    "importance": 0.8,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.244645",
+    "last_accessed": "2025-12-08T07:59:25.244651",
+    "tags": [
+      "scaling",
+      "database",
+      "architecture"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_99dbd7405f77",
+    "content": "Added input validation to all endpoints -> Prevented 95% of malformed requests",
+    "importance": 0.85,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.245240",
+    "last_accessed": "2025-12-08T07:59:25.245246",
+    "tags": [
+      "security",
+      "validation",
+      "api"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_2fb0c3460a8e",
+    "content": "Solved problem using chain_of_thought -> Solution confidence: 70.00%",
+    "importance": 0.8,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.246088",
+    "last_accessed": "2025-12-08T07:59:25.246090",
+    "tags": [
+      "problem_solving",
+      "chain_of_thought"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_cf2d4e695811",
+    "content": "Experience 0 -> Outcome 0",
+    "importance": 0.5,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.246792",
+    "last_accessed": "2025-12-08T07:59:25.246797",
+    "tags": [
+      "tag0"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_7c81519b9560",
+    "content": "Experience 1 -> Outcome 1",
+    "importance": 0.6,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.247479",
+    "last_accessed": "2025-12-08T07:59:25.247485",
+    "tags": [
+      "tag1"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_f72e7c868e5c",
+    "content": "Experience 2 -> Outcome 2",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.248239",
+    "last_accessed": "2025-12-08T07:59:25.248245",
+    "tags": [
+      "tag2"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_685258ea65cd",
+    "content": "Experience 3 -> Outcome 3",
+    "importance": 0.8,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.249001",
+    "last_accessed": "2025-12-08T07:59:25.249007",
+    "tags": [
+      "tag0"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_5a45eb61f276",
+    "content": "Experience 4 -> Outcome 4",
+    "importance": 0.9,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.249768",
+    "last_accessed": "2025-12-08T07:59:25.249773",
+    "tags": [
+      "tag1"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_bde72d5c009a",
+    "content": "Experience 5 -> Outcome 5",
+    "importance": 0.5,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.250666",
+    "last_accessed": "2025-12-08T07:59:25.250671",
+    "tags": [
+      "tag2"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_08a7f41b18e6",
+    "content": "Experience 6 -> Outcome 6",
+    "importance": 0.6,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.251508",
+    "last_accessed": "2025-12-08T07:59:25.251514",
+    "tags": [
+      "tag0"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_47dbf973b4ba",
+    "content": "Experience 7 -> Outcome 7",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.252394",
+    "last_accessed": "2025-12-08T07:59:25.252400",
+    "tags": [
+      "tag1"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_5064df769a37",
+    "content": "Experience 8 -> Outcome 8",
+    "importance": 0.8,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.253309",
+    "last_accessed": "2025-12-08T07:59:25.253314",
+    "tags": [
+      "tag2"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_f081a1560f34",
+    "content": "Experience 9 -> Outcome 9",
+    "importance": 0.9,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.254267",
+    "last_accessed": "2025-12-08T07:59:25.254273",
+    "tags": [
+      "tag0"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_5f80869a9a0a",
+    "content": "Experience 10 -> Outcome 10",
+    "importance": 0.5,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.255237",
+    "last_accessed": "2025-12-08T07:59:25.255242",
+    "tags": [
+      "tag1"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_b1890934b6b8",
+    "content": "Experience 11 -> Outcome 11",
+    "importance": 0.6,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.256264",
+    "last_accessed": "2025-12-08T07:59:25.256270",
+    "tags": [
+      "tag2"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_d58ec8cc54c1",
+    "content": "Experience 12 -> Outcome 12",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.257317",
+    "last_accessed": "2025-12-08T07:59:25.257322",
+    "tags": [
+      "tag0"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_aaf3e509b88c",
+    "content": "Experience 13 -> Outcome 13",
+    "importance": 0.8,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.258427",
+    "last_accessed": "2025-12-08T07:59:25.258433",
+    "tags": [
+      "tag1"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_2c12f25e949d",
+    "content": "Experience 14 -> Outcome 14",
+    "importance": 0.9,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.259531",
+    "last_accessed": "2025-12-08T07:59:25.259536",
+    "tags": [
+      "tag2"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_ecf7907b71e8",
+    "content": "Experience 15 -> Outcome 15",
+    "importance": 0.5,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.260701",
+    "last_accessed": "2025-12-08T07:59:25.260707",
+    "tags": [
+      "tag0"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_d84d3af80fc3",
+    "content": "Experience 16 -> Outcome 16",
+    "importance": 0.6,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.261930",
+    "last_accessed": "2025-12-08T07:59:25.261936",
+    "tags": [
+      "tag1"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_b3712652b64a",
+    "content": "Experience 17 -> Outcome 17",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.263232",
+    "last_accessed": "2025-12-08T07:59:25.263237",
+    "tags": [
+      "tag2"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_dfe5d83a8f20",
+    "content": "Experience 18 -> Outcome 18",
+    "importance": 0.8,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.264512",
+    "last_accessed": "2025-12-08T07:59:25.264518",
+    "tags": [
+      "tag0"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_b311fbb9ba6d",
+    "content": "Experience 19 -> Outcome 19",
+    "importance": 0.9,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.265805",
+    "last_accessed": "2025-12-08T07:59:25.265810",
+    "tags": [
+      "tag1"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_09a9434be8f3",
+    "content": "Created plan for: Optimize AI system performance and accuracy -> Plan generated successfully",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T07:59:25.267285",
+    "last_accessed": "2025-12-08T07:59:25.267287",
+    "tags": [
+      "planning",
+      "autonomous"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_469b0fa9b6f2",
+    "content": "Created plan for: Test system integration -> Plan generated successfully",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:24:46.101383",
+    "last_accessed": "2025-12-08T08:24:46.101384",
+    "tags": [
+      "planning",
+      "autonomous"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_6d29e7b16398",
+    "content": "Executed task: Test system integration -> Successfully completed using chain_of_thought strategy",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:24:46.102433",
+    "last_accessed": "2025-12-08T08:24:46.102436",
+    "tags": [
+      "execution",
+      "orchestration"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_8e9f568949dd",
+    "content": "Created plan for: Optimize microservices architecture -> Plan generated successfully",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:27:21.638367",
+    "last_accessed": "2025-12-08T08:27:21.638368",
+    "tags": [
+      "planning",
+      "autonomous"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_cb86c79489cc",
+    "content": "Executed task: Optimize microservices architecture -> Successfully completed using chain_of_thought strategy",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:27:21.639459",
+    "last_accessed": "2025-12-08T08:27:21.639462",
+    "tags": [
+      "execution",
+      "orchestration"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_e8040befbe66",
+    "content": "Implemented load balancer with health checks -> Improved system reliability by 99.9%",
+    "importance": 0.9,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:27:21.640493",
+    "last_accessed": "2025-12-08T08:27:21.640497",
+    "tags": [
+      "infrastructure",
+      "reliability"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_aafdc54b3c1f",
+    "content": "Solved problem using chain_of_thought -> Solution confidence: 85.00%",
+    "importance": 0.8,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:27:21.641719",
+    "last_accessed": "2025-12-08T08:27:21.641720",
+    "tags": [
+      "problem_solving",
+      "chain_of_thought"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_896586aa8f80",
+    "content": "Created plan for: Optimize microservices architecture -> Plan generated successfully",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:27:51.426579",
+    "last_accessed": "2025-12-08T08:27:51.426580",
+    "tags": [
+      "planning",
+      "autonomous"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_2d5637d8d9b0",
+    "content": "Executed task: Optimize microservices architecture -> Successfully completed using chain_of_thought strategy",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:27:51.427771",
+    "last_accessed": "2025-12-08T08:27:51.427773",
+    "tags": [
+      "execution",
+      "orchestration"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_72537341a27e",
+    "content": "Implemented load balancer with health checks -> Improved system reliability by 99.9%",
+    "importance": 0.9,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:27:51.428817",
+    "last_accessed": "2025-12-08T08:27:51.428823",
+    "tags": [
+      "infrastructure",
+      "reliability"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_dcf9af00b25c",
+    "content": "Solved problem using chain_of_thought -> Solution confidence: 85.00%",
+    "importance": 0.8,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:27:51.430042",
+    "last_accessed": "2025-12-08T08:27:51.430044",
+    "tags": [
+      "problem_solving",
+      "chain_of_thought"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_fc069686de88",
+    "content": "Created plan for: Design and implement a secure authentication system -> Plan generated successfully",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.857256",
+    "last_accessed": "2025-12-08T08:52:21.857257",
+    "tags": [
+      "planning",
+      "autonomous"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_e0f9b0aa47ae",
+    "content": "Executed task: Design and implement a secure authentication system -> Successfully completed using tree_of_thought strategy",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.858567",
+    "last_accessed": "2025-12-08T08:52:21.858570",
+    "tags": [
+      "execution",
+      "orchestration"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_4163272da107",
+    "content": "Solved problem using chain_of_thought -> Solution confidence: 85.00%",
+    "importance": 0.8,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.860034",
+    "last_accessed": "2025-12-08T08:52:21.860036",
+    "tags": [
+      "problem_solving",
+      "chain_of_thought"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_519f5b683de4",
+    "content": "Created plan for: Optimize AI system performance and accuracy -> Plan generated successfully",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.861620",
+    "last_accessed": "2025-12-08T08:52:21.861623",
+    "tags": [
+      "planning",
+      "autonomous"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_57eea3fc37a3",
+    "content": "Created plan for: Create a REST API for user management -> Plan generated successfully",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.923691",
+    "last_accessed": "2025-12-08T08:52:21.923692",
+    "tags": [
+      "planning",
+      "autonomous"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_29466077bafa",
+    "content": "Executed task: Create a REST API for user management -> Successfully completed using tree_of_thought strategy",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.925027",
+    "last_accessed": "2025-12-08T08:52:21.925030",
+    "tags": [
+      "execution",
+      "orchestration"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_ce05d0cbb4f3",
+    "content": "Implemented Redis caching for API responses -> Response time reduced from 200ms to 20ms",
+    "importance": 0.9,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.926342",
+    "last_accessed": "2025-12-08T08:52:21.926347",
+    "tags": [
+      "performance",
+      "caching",
+      "redis"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_ae1b1ce1ebd7",
+    "content": "Attempted to scale database vertically -> Hit hardware limits, horizontal scaling needed",
+    "importance": 0.8,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.927596",
+    "last_accessed": "2025-12-08T08:52:21.927601",
+    "tags": [
+      "scaling",
+      "database",
+      "architecture"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_3b479380275b",
+    "content": "Added input validation to all endpoints -> Prevented 95% of malformed requests",
+    "importance": 0.85,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.928924",
+    "last_accessed": "2025-12-08T08:52:21.928929",
+    "tags": [
+      "security",
+      "validation",
+      "api"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_b6af4d7060d3",
+    "content": "Solved problem using chain_of_thought -> Solution confidence: 85.00%",
+    "importance": 0.8,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.930831",
+    "last_accessed": "2025-12-08T08:52:21.930834",
+    "tags": [
+      "problem_solving",
+      "chain_of_thought"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_00b1068e2e90",
+    "content": "Experience 0 -> Outcome 0",
+    "importance": 0.5,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.932847",
+    "last_accessed": "2025-12-08T08:52:21.932853",
+    "tags": [
+      "tag0"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_f291d9768613",
+    "content": "Experience 1 -> Outcome 1",
+    "importance": 0.6,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.934243",
+    "last_accessed": "2025-12-08T08:52:21.934249",
+    "tags": [
+      "tag1"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_a34269f806da",
+    "content": "Experience 2 -> Outcome 2",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.936534",
+    "last_accessed": "2025-12-08T08:52:21.936540",
+    "tags": [
+      "tag2"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_7f4f6c2d77fe",
+    "content": "Experience 3 -> Outcome 3",
+    "importance": 0.8,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.938437",
+    "last_accessed": "2025-12-08T08:52:21.938442",
+    "tags": [
+      "tag0"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_70afeb6570d4",
+    "content": "Experience 4 -> Outcome 4",
+    "importance": 0.9,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.939703",
+    "last_accessed": "2025-12-08T08:52:21.939708",
+    "tags": [
+      "tag1"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_0dfaceb8f3cd",
+    "content": "Experience 5 -> Outcome 5",
+    "importance": 0.5,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.941053",
+    "last_accessed": "2025-12-08T08:52:21.941058",
+    "tags": [
+      "tag2"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_1456dbc35917",
+    "content": "Experience 6 -> Outcome 6",
+    "importance": 0.6,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.942509",
+    "last_accessed": "2025-12-08T08:52:21.942515",
+    "tags": [
+      "tag0"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_7fde2cbcf0e8",
+    "content": "Experience 7 -> Outcome 7",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.944524",
+    "last_accessed": "2025-12-08T08:52:21.944529",
+    "tags": [
+      "tag1"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_e7b84daca38b",
+    "content": "Experience 8 -> Outcome 8",
+    "importance": 0.8,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.945857",
+    "last_accessed": "2025-12-08T08:52:21.945862",
+    "tags": [
+      "tag2"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_24134739f55b",
+    "content": "Experience 9 -> Outcome 9",
+    "importance": 0.9,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.947221",
+    "last_accessed": "2025-12-08T08:52:21.947226",
+    "tags": [
+      "tag0"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_31f70d43e02b",
+    "content": "Experience 10 -> Outcome 10",
+    "importance": 0.5,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.948720",
+    "last_accessed": "2025-12-08T08:52:21.948725",
+    "tags": [
+      "tag1"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_f94ed655bef1",
+    "content": "Experience 11 -> Outcome 11",
+    "importance": 0.6,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.950410",
+    "last_accessed": "2025-12-08T08:52:21.950415",
+    "tags": [
+      "tag2"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_c22426b086d6",
+    "content": "Experience 12 -> Outcome 12",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.952011",
+    "last_accessed": "2025-12-08T08:52:21.952017",
+    "tags": [
+      "tag0"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_e71b8c8b6f7e",
+    "content": "Experience 13 -> Outcome 13",
+    "importance": 0.8,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.953610",
+    "last_accessed": "2025-12-08T08:52:21.953616",
+    "tags": [
+      "tag1"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_16b69a7591d1",
+    "content": "Experience 14 -> Outcome 14",
+    "importance": 0.9,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.955691",
+    "last_accessed": "2025-12-08T08:52:21.955697",
+    "tags": [
+      "tag2"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_00415794c282",
+    "content": "Experience 15 -> Outcome 15",
+    "importance": 0.5,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.957249",
+    "last_accessed": "2025-12-08T08:52:21.957254",
+    "tags": [
+      "tag0"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_08163d8d2687",
+    "content": "Experience 16 -> Outcome 16",
+    "importance": 0.6,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.958757",
+    "last_accessed": "2025-12-08T08:52:21.958762",
+    "tags": [
+      "tag1"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_36d64d553656",
+    "content": "Experience 17 -> Outcome 17",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.960488",
+    "last_accessed": "2025-12-08T08:52:21.960493",
+    "tags": [
+      "tag2"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_2960ebc749be",
+    "content": "Experience 18 -> Outcome 18",
+    "importance": 0.8,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.962168",
+    "last_accessed": "2025-12-08T08:52:21.962174",
+    "tags": [
+      "tag0"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_b7b30f750115",
+    "content": "Experience 19 -> Outcome 19",
+    "importance": 0.9,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.963775",
+    "last_accessed": "2025-12-08T08:52:21.963781",
+    "tags": [
+      "tag1"
+    ],
+    "embeddings": null
+  },
+  {
+    "memory_id": "mem_fb29d7e46994",
+    "content": "Created plan for: Optimize AI system performance and accuracy -> Plan generated successfully",
+    "importance": 0.7,
+    "access_count": 0,
+    "created_at": "2025-12-08T08:52:21.965792",
+    "last_accessed": "2025-12-08T08:52:21.965794",
+    "tags": [
+      "planning",
+      "autonomous"
+    ],
+    "embeddings": null
+  }
+]

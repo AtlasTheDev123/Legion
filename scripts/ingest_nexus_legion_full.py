@@ -1,4 +1,4 @@
-﻿"""Ingest script: scans `schemas/` and `registry/` and optionally inserts into MongoDB.
+"""Ingest script: scans `schemas/` and `registry/` and optionally inserts into MongoDB.
 Usage: set MONGO_URI env var to enable DB writes; otherwise script prints what it would insert.
 """
 import os

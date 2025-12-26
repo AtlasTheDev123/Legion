@@ -1,4 +1,4 @@
-﻿"""Simple dynamic plugin loader (imports plugins from `plugins/` directory)."""
+"""Simple dynamic plugin loader (imports plugins from `plugins/` directory)."""
 import importlib
 import pkgutil
 

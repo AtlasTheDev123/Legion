@@ -12,6 +12,7 @@
 **autonomous orchestration, cybersecurity research, DevSecOps automation, and intelligent experimentation**.  
 
 It combines:
+- **Next-Gen AI Model** - Advanced reasoning, learning, and multi-modal processing
 - Multi-agent intelligence  
 - Secure containers  
 - Reproducible builds  
@@ -76,6 +77,7 @@ Recommended for sandboxed builds and controlled experiments
 
 Component	Description
 
+**NEXUS AI Model**	Next-generation autonomous intelligence with multi-step reasoning, adaptive learning, and self-optimization
 Autonomous Core	Multi-agent reasoning engine with memory persistence and predictive orchestration
 DevSecOps Layer	Continuous scanning, patch generation, and secured build automation
 Sandbox Engine	Isolated runtime supporting Python, Rust, C++, and JS under controlled execution
@@ -91,13 +93,22 @@ Frontend Dashboard	FastAPI + React visualization for real-time system telemetry
 🧰 Repository Structure
 
 NEXUS-LEGION-X-OMEGA/
+├── agents/
+│   ├── nexus_ai_model.py         # Next-gen AI with reasoning & learning
+│   ├── advanced_reasoning.py     # Multi-strategy reasoning engine
+│   ├── multi_modal_ai.py         # Text, code, image, audio processing
+│   ├── orchestrator.py           # Unified AI orchestration
+│   ├── agent_manager.py          # Multi-agent coordination
+│   └── ai_core.py                # Core AI integration
 ├── docs/
+│   ├── NEXUS_AI_MODEL.md         # **NEW** AI Model documentation
 │   ├── PROTOCOL_SANITIZED.md
 │   ├── WSL_SETUP.md
 │   └── experimental/
 ├── scripts/
 │   ├── setup_wsl.sh
 │   └── deploy_all.sh
+├── run_nexus_ai.py               # **NEW** AI demo runner
 ├── .devcontainer/
 ├── .github/workflows/ci.yml
 └── src/
@@ -106,6 +117,29 @@ NEXUS-LEGION-X-OMEGA/
     ├── sandbox/
     └── dashboard/
 
+
+---
+
+## 🤖 NEXUS AI Model - Quick Start
+
+```bash
+# Run the next-generation AI model demo
+python run_nexus_ai.py
+
+# Or use individual components
+python agents/nexus_ai_model.py
+python agents/advanced_reasoning.py
+python agents/orchestrator.py
+```
+
+**Key Features:**
+- ✅ Multi-step reasoning (7 strategies)
+- ✅ Adaptive learning with memory persistence
+- ✅ Multi-modal processing (text, code, images, audio)
+- ✅ Self-optimization and meta-reasoning
+- ✅ Autonomous task planning and execution
+
+📖 **Full Documentation:** [docs/NEXUS_AI_MODEL.md](docs/NEXUS_AI_MODEL.md)
 
 ---
 
