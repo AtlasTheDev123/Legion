@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "legion-core-claw"
+version = "3.0.0"
+description = "Unified AI-driven DevSecOps and autonomous automation framework"
+readme = "README.md"
+license = {text = "LICENSE"}
+authors = [
+    {name = "ATLAS", email = "atlas@nexus-legion.com"}
+]
+keywords = [
+    "ai", "devops", "automation", "orchestration", "security",
+    "agents", "multi-agent", "code-generation", "deployment"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+requires-python = ">=3.8"
+
+dependencies = [
+    "fastapi>=0.95.0",
+    "uvicorn[standard]>=0.21.0",
+    "pydantic>=1.10.0",
+    "openai>=0.27.0",
+    "langchain>=0.0.200",
+    "python-telegram-bot>=20.0",
+    "pymongo>=4.3.0",
+    "cryptography>=38.0.0",
+    "python-dotenv>=0.21.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/AtlasTheDev123/Legion"
+Repository = "https://github.com/AtlasTheDev123/Legion.git"
+Documentation = "https://github.com/AtlasTheDev123/Legion/blob/main/docs/"
+Issues = "https://github.com/AtlasTheDev123/Legion/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.2.0",
+    "pytest-asyncio>=0.20.0",
+    "black>=23.0.0",
+    "flake8>=5.0.0",
+    "mypy>=0.991",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["legion_core_claw*"]
+
+[tool.black]
+line-length = 120
+target-version = ['py38', 'py39', 'py310', 'py311']
+
+[tool.isort]
+profile = "black"
+line_length = 120
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+asyncio_mode = "auto"
