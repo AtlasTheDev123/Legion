@@ -1,0 +1,165 @@
+{
+  "name": "legion-copilot",
+  "displayName": "Legion Copilot",
+  "description": "AI-powered code assistant with autonomous agents - GitHub Copilot alternative",
+  "version": "1.0.0",
+  "publisher": "atlas-dev",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters",
+    "Snippets"
+  ],
+  "keywords": [
+    "ai",
+    "copilot",
+    "code-completion",
+    "assistant",
+    "automation"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onLanguage:python",
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:java",
+    "onLanguage:go"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "legion.generateCode",
+        "title": "Legion: Generate Code",
+        "category": "Legion"
+      },
+      {
+        "command": "legion.refactorCode",
+        "title": "Legion: Refactor Code",
+        "category": "Legion"
+      },
+      {
+        "command": "legion.explainCode",
+        "title": "Legion: Explain Code",
+        "category": "Legion"
+      },
+      {
+        "command": "legion.generateTests",
+        "title": "Legion: Generate Tests",
+        "category": "Legion"
+      },
+      {
+        "command": "legion.fixErrors",
+        "title": "Legion: Fix Errors",
+        "category": "Legion"
+      },
+      {
+        "command": "legion.optimizeCode",
+        "title": "Legion: Optimize Code",
+        "category": "Legion"
+      },
+      {
+        "command": "legion.securityAudit",
+        "title": "Legion: Security Audit",
+        "category": "Legion"
+      },
+      {
+        "command": "legion.chat",
+        "title": "Legion: Open Chat",
+        "category": "Legion"
+      }
+    ],
+    "configuration": {
+      "title": "Legion Copilot",
+      "properties": {
+        "legion.apiEndpoint": {
+          "type": "string",
+          "default": "http://localhost:8000",
+          "description": "Legion API endpoint URL"
+        },
+        "legion.authToken": {
+          "type": "string",
+          "default": "",
+          "description": "Authorization token for Legion API"
+        },
+        "legion.autoComplete": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable auto-completion suggestions"
+        },
+        "legion.enableSecurityAudit": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable automatic security auditing"
+        },
+        "legion.model": {
+          "type": "string",
+          "default": "gpt-4",
+          "enum": ["gpt-4", "gpt-4-turbo", "claude-3", "mistral-large"],
+          "description": "LLM model to use"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "legion.generateCode",
+        "key": "ctrl+shift+g",
+        "mac": "cmd+shift+g"
+      },
+      {
+        "command": "legion.refactorCode",
+        "key": "ctrl+shift+r",
+        "mac": "cmd+shift+r"
+      },
+      {
+        "command": "legion.chat",
+        "key": "ctrl+shift+l",
+        "mac": "cmd+shift+l"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "legion-explorer",
+          "title": "Legion",
+          "icon": "resources/legion-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "legion-explorer": [
+        {
+          "id": "legion-chat",
+          "name": "Chat"
+        },
+        {
+          "id": "legion-agents",
+          "name": "Agents"
+        },
+        {
+          "id": "legion-tools",
+          "name": "Tools"
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0",
+    "@types/node": "^18.0.0",
+    "typescript": "^4.9.0",
+    "@vscode/vsce": "^2.15.0"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "ws": "^8.13.0"
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  }
+}
