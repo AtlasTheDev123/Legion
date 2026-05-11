@@ -1,14 +1,19 @@
 ﻿from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
-import json, os
+import json, os, sys
 from pydantic import BaseModel
 from typing import Optional, Dict, Any
 
+# ensure root project path is available for imports
+ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
+if ROOT_DIR not in sys.path:
+    sys.path.insert(0, ROOT_DIR)
+
 # import sandbox simulator for safe demos
-from ...bot.sandbox import simulate_execution
+from bot.sandbox import simulate_execution
 
 app = FastAPI(title="NEXUS Legion Dashboard (dev)")
-SCHEMAS = os.path.join(os.getcwd(), 'schemas', 'functions.json')
+SCHEMAS = os.path.join(ROOT_DIR, 'schemas', 'functions.json')
 
 
 @app.get('/api/functions')

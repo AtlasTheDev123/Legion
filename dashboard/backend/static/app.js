@@ -61,9 +61,13 @@ document.addEventListener('DOMContentLoaded', async () => {
       try{
         const r = await fetch('/api/chat', {method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(payload)});
         const j = await r.json();
-        appendMessage('System', JSON.stringify(j));
+        const responseText = JSON.stringify(j);
+        appendMessage('System', responseText);
+        speakText(responseText);
       }catch(err){
-        appendMessage('System', 'Error: '+err.message);
+        const errorText = 'Error: '+err.message;
+        appendMessage('System', errorText);
+        speakText(errorText);
       }
       input.value='';
     });
@@ -78,15 +82,38 @@ document.addEventListener('DOMContentLoaded', async () => {
       }catch(err){ appendMessage('Telegram','Error: '+err.message) }
     });
 
-    document.getElementById('tg_call_btn').addEventListener('click', async ()=>{
-      const phone = document.getElementById('telegram_chat_id').value.trim();
-      const input = document.getElementById('chat_input').value.trim() || 'Test call from dashboard';
-      if(!phone){ appendMessage('System','Provide phone number to call'); return }
-      try{
-        const r = await fetch('/api/telegram/call',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({phone:phone,message:input})});
-        const j = await r.json(); appendMessage('Call', JSON.stringify(j));
-      }catch(err){ appendMessage('Call','Error: '+err.message) }
-    });
+    document.getElementById('voice_btn').addEventListener('click', startVoiceInput);
+
+    // Voice functions
+    function startVoiceInput() {
+      const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+      recognition.lang = 'en-US';
+      recognition.interimResults = false;
+      recognition.maxAlternatives = 1;
+
+      recognition.onstart = () => {
+        appendMessage('System', 'Listening...');
+      };
+
+      recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        document.getElementById('chat_input').value = transcript;
+        appendMessage('You (voice)', transcript);
+        // Automatically send
+        document.getElementById('send_btn').click();
+      };
+
+      recognition.onerror = (event) => {
+        appendMessage('System', 'Voice recognition error: ' + event.error);
+      };
+
+      recognition.start();
+    }
+
+    function speakText(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.speak(utterance);
+    }
   } catch (err) {
     document.getElementById('summary').textContent = 'Error loading functions';
     console.error(err);
